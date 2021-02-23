@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  web:
+    container_name: api_flask
+    build: .
+    env_file: conf/environments/.env-development
+    command: bash -c "python3 app.py"
+    volumes:
+      - .:/api_flask
+    ports:
+      - "8084:8084"
+
